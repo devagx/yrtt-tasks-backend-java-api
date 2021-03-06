@@ -1,0 +1,19 @@
+service: yrtt-tasks-backend-api
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: java8
+  lambdaHashingVersion: 20201221
+  region: eu-west-2
+  profile: serverless
+package:
+  artifact: target/hello-dev.jar
+
+functions:
+  tasks-api:
+    handler: com.serverless.Handler
+    events:
+      - httpApi:
+          path: tasks
+          method: get
