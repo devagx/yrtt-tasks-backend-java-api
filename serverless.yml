@@ -14,6 +14,6 @@ functions:
   tasks-api:
     handler: com.serverless.Handler
     events:
-      - httpApi:
+      - http:
           path: tasks
           method: get
