@@ -8,10 +8,10 @@ provider:
   region: eu-west-2
   profile: serverless
 package:
-  artifact: target/hello-dev.jar
+  artifact: target/tasks-api-java-dev.jar
 
 functions:
-  tasks-api:
+  tasks-api-java:
     handler: com.techreturners.Handler
     events:
       - http:
