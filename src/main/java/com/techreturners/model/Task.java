@@ -12,6 +12,10 @@ public class Task {
         this.completed = completed;
     }
 
+    public Task() {
+
+    }
+
     public String getTaskId() {
         return taskId;
     }
