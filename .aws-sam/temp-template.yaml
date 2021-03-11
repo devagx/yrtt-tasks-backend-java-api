@@ -1,0 +1,9 @@
+Resources:
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 300
+      MemorySize: 128
+      Handler: com.techreturners.Handler
+      CodeUri: C:\Users\alung\OneDrive\Documents\Home\CV and Training\Courses\TechReturners\Coding\Backend\yrtt_tasks_backend_java_api
+      Runtime: java8
