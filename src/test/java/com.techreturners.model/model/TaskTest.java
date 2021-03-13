@@ -30,4 +30,12 @@ public class TaskTest {
 
         assertEquals("abc123", t.getTaskId(), "Task ID was incorrect");
     }
+
+    @Test
+    @DisplayName("Test task ID GET2")
+    public void testTaskId2() {
+        Task t = new Task("abc123", "Some task description", false);
+
+        assertEquals("abc123", t.getTaskId(), "Task ID was incorrect");
+    }
 }
