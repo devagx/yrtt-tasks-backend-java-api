@@ -51,7 +51,9 @@ public class GetTasksHandler implements RequestHandler<APIGatewayProxyRequestEve
             while (resultSet.next()) {
                 Task task = new Task(resultSet.getString("taskId"),
                         resultSet.getString("description"),
-                        resultSet.getBoolean("completed"));
+                        resultSet.getBoolean("completed"),
+                        resultSet.getString("userId")
+                );
 
                 tasks.add(task);
             }

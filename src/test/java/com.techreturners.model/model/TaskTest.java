@@ -10,7 +10,7 @@ public class TaskTest {
     @Test
     @DisplayName("Test task description GET")
     public void testTaskDescription() {
-        Task t = new Task("abc123", "Some task description", false);
+        Task t = new Task("abc123", "Some task description", false, "");
 
         assertEquals("Some task description", t.getDescription(), "Task description was incorrect");
     }
@@ -26,7 +26,7 @@ public class TaskTest {
     @Test
     @DisplayName("Test task ID GET")
     public void testTaskId() {
-        Task t = new Task("abc123", "Some task description", false);
+        Task t = new Task("abc123", "Some task description", false, "");
 
         assertEquals("abc123", t.getTaskId(), "Task ID was incorrect");
     }
@@ -34,7 +34,7 @@ public class TaskTest {
     @Test
     @DisplayName("Test task ID GET2")
     public void testTaskId2() {
-        Task t = new Task("abc123", "Some task description", false);
+        Task t = new Task("abc123", "Some task description", false, "");
 
         assertEquals("abc123", t.getTaskId(), "Task ID was incorrect");
     }

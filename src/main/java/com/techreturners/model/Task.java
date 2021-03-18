@@ -4,6 +4,7 @@ public class Task {
 
     private String taskId;
     private String description;
+    private String userId;
     private boolean completed;
 
     public Task() {}
@@ -14,14 +15,19 @@ public class Task {
         this.completed = false;
     }
 
-    public Task(String taskId, String description, boolean completed) {
+    public Task(String taskId, String description, boolean completed, String userId) {
         this.taskId = taskId;
         this.description = description;
         this.completed = completed;
+        this.userId = userId;
     }
 
     public String getTaskId() {
         return taskId;
+    }
+
+    public String getUserId() {
+        return userId;
     }
 
     public String getDescription() {

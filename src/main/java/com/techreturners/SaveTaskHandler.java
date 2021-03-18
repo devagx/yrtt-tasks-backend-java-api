@@ -56,7 +56,8 @@ public class SaveTaskHandler implements RequestHandler<APIGatewayProxyRequestEve
 
             connection.close();
         } catch (IOException e) {
-            LOG.error("Unable to unmarshal JSON for adding a task", e);
+            LOG.error(String.format("Unable to unmarshall JSON for adding a reminder %s",
+                    e.getMessage()));
         } catch (ClassNotFoundException e) {
             LOG.error("ClassNotFoundException", e);
         } catch (SQLException throwables) {
