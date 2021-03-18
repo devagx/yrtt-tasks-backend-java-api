@@ -40,13 +40,11 @@ public class SaveTaskHandler implements RequestHandler<APIGatewayProxyRequestEve
         try {
             Task t = objMapper.readValue(requestBody, Task.class);
 
-            Class.forName("com.mysql.jdbc.Driver");
-
-            connection = DriverManager.getConnection(String.format("jdbc:mysql://%s/%s?user=%s&password=%s",
-                    System.getenv("DB_HOST"),
-                    System.getenv("DB_NAME"),
-                    System.getenv("DB_USER"),
-                    System.getenv("DB_PASSWORD")));
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = System.getenv("DB_HOST");
+            String user = System.getenv("DB_USER");
+            String password = System.getenv("DB_PASSWORD");
+            connection = DriverManager.getConnection(url, user, password);
 
             preparedStatement = connection.prepareStatement("INSERT INTO task VALUES (?, ?, ?, ?)");
             preparedStatement.setString(1, UUID.randomUUID().toString());
