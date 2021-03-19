@@ -22,10 +22,12 @@ functions:
       - http:
           path: /users/{userId}/tasks
           method: get
+          cors: true
   save-task-java-api:
     handler: com.techreturners.SaveTaskHandler
     events:
       - http:
           path: /users/{userId}/tasks
           method: post
+          cors: true
 
