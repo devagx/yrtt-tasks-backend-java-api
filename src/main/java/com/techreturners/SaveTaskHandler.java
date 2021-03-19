@@ -25,7 +25,7 @@ public class SaveTaskHandler implements RequestHandler<APIGatewayProxyRequestEve
 
     @Override
     public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent request, Context context) {
-        LOG.info("received the request");
+        LOG.info("received the request33");
 
         String userId = request.getPathParameters().get("userId");
         String requestBody = request.getBody();
@@ -56,8 +56,7 @@ public class SaveTaskHandler implements RequestHandler<APIGatewayProxyRequestEve
 
             connection.close();
         } catch (IOException e) {
-            LOG.error(String.format("Unable to unmarshall JSON for adding a reminder %s",
-                    e.getMessage()));
+            LOG.error("Unable to unmarshal JSON for adding a task", e);
         } catch (ClassNotFoundException e) {
             LOG.error("ClassNotFoundException", e);
         } catch (SQLException throwables) {
